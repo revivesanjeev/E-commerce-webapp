@@ -1,0 +1,7 @@
+.middle{
+   display: flex;
+  justify-content: center;
+  padding-top: 20px;/* Full viewport height */
+}
+
+

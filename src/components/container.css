@@ -1,0 +1,16 @@
+.custom-container {
+   /* Adjust the percentage to your desired width */
+
+width: 100%;
+  background-color: rgb(143, 142, 146);
+  height: 200px;
+}
+
+p{
+    text-align: center;
+    justify-content: center;
+    color: azure;
+    font-size: 100px;
+    font-weight: bold;
+         font-family:"Metal Mania";
+}
