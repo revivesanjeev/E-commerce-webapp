@@ -1,0 +1,29 @@
+.customcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(103, 184, 231);
+  height: 100px;
+  padding: 0 5%;
+}
+
+.footertitle { 
+  margin-left: 20%;
+  color: rgb(246, 248, 243);
+  font-size: 4rem; 
+  font-weight: bold;
+  font-family: "Metal Mania";
+}
+
+.social-icons {
+  margin-right: 15%;
+  display: flex;
+  gap: 15px; 
+}
+
+.icon {
+  width: 30px; 
+  height: 30px;
+  margin-left: 2rem;
+}
