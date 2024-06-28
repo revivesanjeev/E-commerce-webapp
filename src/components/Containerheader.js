@@ -1,16 +1,11 @@
-import React from 'react';
-
+import React from "react";
 
 import "./container.css";
 
 function Containerheader() {
   return (
     <div className="custom-container">
- 
-      
-        <p >The Generics</p>
-      
- 
+      <p>The Generics</p>
     </div>
   );
 }

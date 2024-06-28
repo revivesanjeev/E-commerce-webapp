@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./Card.css";
+import "./AvailabelProduct.css";
 
-function CARTITEM({ title, price, imageUrl }) {
+function AvailabelProduct({ title, price, imageUrl }) {
   return (
     <Card className="card">
       <Card.Title className="cardtitle">{title}</Card.Title>
@@ -16,4 +16,4 @@ function CARTITEM({ title, price, imageUrl }) {
   );
 }
 
-export default CARTITEM;
+export default AvailabelProduct;
