@@ -1,11 +1,12 @@
 
 
 
-.card .cardimg {
-  width: 70% !important; /* Force this width to override any other styles */
-  height: auto !important; /* Ensure aspect ratio is maintained */
+ .cardimg {
+  width: 70% !important; 
+  height: auto !important; 
   object-fit: cover;
   margin-bottom: 10px;
+
 }
 
 .cardbody {
@@ -16,7 +17,7 @@
 }
 
 .cardtitle {
-  font-size: 1.5rem; /* Adjust the font size as needed */
+  font-size: 1.5rem; 
   margin: 10px !important;
   font-weight: bold !important;
 }
@@ -24,8 +25,8 @@
 
 .cardtext {
    color: black;
-    font-size: 0.8rem;
-     margin-bottom: 10px ;
+   font-size: 0.8rem;
+   margin-bottom: 10px ;
 }
 
 .card {

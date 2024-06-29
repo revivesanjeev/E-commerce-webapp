@@ -17,6 +17,7 @@
   flex: 0 1 40%; /* Ensures two items per row with some margin in between */
   margin-bottom: 50px;
 }
+
 .center-button-container {
   display: flex;
   justify-content: center;
