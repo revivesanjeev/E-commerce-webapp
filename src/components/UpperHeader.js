@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import "./UpperHeader.css";
-import {useLocation, Link } from "react-router-dom";
+import {useLocation, NavLink } from "react-router-dom";
 
 function UpperHeader({ onCartButtonClick }) {
 
@@ -17,11 +17,25 @@ function UpperHeader({ onCartButtonClick }) {
   return (
     <Navbar variant="dark" bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand
+          as={NavLink}
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
           HOME
         </Navbar.Brand>
-        <Navbar.Brand href="#store">STORE</Navbar.Brand>
-        <Navbar.Brand as={Link} to="/about">
+        <Navbar.Brand
+          as={NavLink}
+          to="/store"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          STORE
+        </Navbar.Brand>
+        <Navbar.Brand
+          as={NavLink}
+          to="/about"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
           ABOUT
         </Navbar.Brand>
         {location.pathname === "/" && (

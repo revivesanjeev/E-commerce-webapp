@@ -6,3 +6,11 @@ Navbar {
   margin-left: 15px;
   font-size: 0.8em;
 }
+
+/* Add this to your UpperHeader.css */
+
+.active {
+  
+  font-weight: bold; /* Optional: makes the active link bold */
+  border-bottom: 3px solid rgb(0, 255, 200); /* Optional: adds a border to indicate active state */
+}
