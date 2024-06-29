@@ -1,0 +1,25 @@
+.product {
+  font-family: "Metal Mania";
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.cartitem {
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cartitem > div {
+  flex: 0 1 40%; /* Ensures two items per row with some margin in between */
+  margin-bottom: 50px;
+}
+
+.center-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

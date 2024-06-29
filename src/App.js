@@ -5,9 +5,10 @@ import UpperHeader from "./components/UpperHeader";
 import LowerHeader from "./components/LowerHeader";
 import Modal from "./components/Modal";
 import CartItem from "./components/CartItem";
-import Home from "./components/Home";
+import Store from "./components/Store";
 import Footer from "./components/Footer";
 import About from "./components/About";
+import Home from "./components/Home";
 
 
 
@@ -22,11 +23,13 @@ const App = () => {
 
   return (
     <Router>
-      <UpperHeader onCartButtonClick={handleCartButtonClick} />
+       
+      <UpperHeader  onCartButtonClick={handleCartButtonClick} />
       <LowerHeader />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Store />} />
         <Route path="/about" element={<About />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
       {isCartVisible && (
         <Modal onClose={handleCartButtonClick}>

@@ -1,55 +1,38 @@
-import React,{useState,useContext} from "react";
-import { Button } from "react-bootstrap";
-import AvailabelProducts from "./AvailabelProducts";
-import CartItem from "./CartItem";
-import Modal from "./Modal";
-import ProductContext from "./ProductContext";
+import React from 'react';
 import "./Home.css";
 
 const Home=()=> {
 
+     const tickets = [
+       {
+         date: "JUL 16",
+         city: "DETROIT, MI",
+         place: "DTE ENERGY MUSIC THEATRE",
+       },
+       { date: "JUL 19", city: "TORONTO, ON", place: "BUDWEISER STAGE" },
+       { date: "JUL 22", city: "BRISTOW, VA", place: "JIGGY LUBE LIVE" },
+       { date: "JUL 29", city: "PHOENIX, AZ", place: "AK-CHIN PAVILION" },
+       { date: "AUG 02", city: "CONCORD, CA", place: "CONCORD PAVILION" },
+       { date: "AUG 05", city: "LAS VEGAS, NY", place: "T-MOBILE ARENA" },
+     ];
 
-
-  const [isCartVisible, setIsCartVisible] = useState(false);
-const { musicProducts, merchProducts } = useContext(ProductContext);
-
-const handleCartButtonClick = () => {
-  setIsCartVisible(!isCartVisible);
-};
 
   return (
-    <div>
-      <h3 className="product">MUSIC</h3>
-      <div className="cartitem">
-        {musicProducts.map((product, index) => (
-          <AvailabelProducts
-            key={index}
-            title={product.title}
-            price={product.price}
-            imageUrl={product.imageUrl}
-          />
-        ))}
-      </div>
-      <h3 className="product">MERCH</h3>
-      <div className="cartitem">
-        {merchProducts.map((product, index) => (
-          <AvailabelProducts
-            key={index}
-            title={product.title}
-            price={product.price}
-            imageUrl={product.imageUrl}
-          />
-        ))}
-      </div>
-      <div className="center-button-container">
-        <Button onClick={handleCartButtonClick}>See the cart</Button>
-      </div>
-      {isCartVisible && (
-        <Modal onClose={handleCartButtonClick}>
-          <CartItem onClose={handleCartButtonClick} />
-        </Modal>
-      )}
-    </div>
+    <section className="tickets">
+      <h1>Book Tickets</h1>
+      <ul className="ticket-list">
+        {tickets.map((t, i) => {
+          return (
+            <li className="ticket-items" key={i}>
+              <div className="date">{t.date}</div>
+              <div className="city">{t.city}</div>
+              <div className="place">{t.place}</div>
+              <button type="button">Book</button>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 

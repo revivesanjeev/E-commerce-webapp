@@ -15,22 +15,23 @@ function UpperHeader({ onCartButtonClick }) {
       const location= useLocation();
 
   return (
-    <Navbar variant="dark" bg="dark" expand="lg">
+    <Navbar variant="dark" bg="dark" expand="lg" className="customnav">
       <Container>
         <Navbar.Brand
           as={NavLink}
-          to="/"
+          to="/home"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           HOME
         </Navbar.Brand>
         <Navbar.Brand
           as={NavLink}
-          to="/store"
+          to="/"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           STORE
         </Navbar.Brand>
+
         <Navbar.Brand
           as={NavLink}
           to="/about"
