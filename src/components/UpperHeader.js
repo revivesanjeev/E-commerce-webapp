@@ -39,6 +39,14 @@ function UpperHeader({ onCartButtonClick }) {
         >
           ABOUT
         </Navbar.Brand>
+
+        <Navbar.Brand
+          as={NavLink}
+          to="/contact"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Contact US
+        </Navbar.Brand>
         {location.pathname === "/" && (
           <Button variant="outline-info" onClick={onCartButtonClick}>
             Cart

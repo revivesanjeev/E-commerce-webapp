@@ -17,5 +17,5 @@ Navbar {
 .active {
   
   font-weight: bold; /* Optional: makes the active link bold */
-  border-bottom: 3px solid rgb(0, 255, 200); /* Optional: adds a border to indicate active state */
+  border-bottom: 3px solid rgb(0, 255, 200); 
 }

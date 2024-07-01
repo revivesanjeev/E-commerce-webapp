@@ -21,12 +21,12 @@ const Home=()=> {
     <section className="tickets">
       <h1>Book Tickets</h1>
       <ul className="ticket-list">
-        {tickets.map((t, i) => {
+        {tickets.map((ticket, index) => {
           return (
-            <li className="ticket-items" key={i}>
-              <div className="date">{t.date}</div>
-              <div className="city">{t.city}</div>
-              <div className="place">{t.place}</div>
+            <li className="ticket-items" key={index}>
+              <div className="date">{ticket.date}</div>
+              <div className="city">{ticket.city}</div>
+              <div className="place">{ticket.place}</div>
               <button type="button">Book</button>
             </li>
           );
