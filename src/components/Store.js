@@ -1,21 +1,27 @@
 import React,{useState,useContext} from "react";
 import { Button } from "react-bootstrap";
 import AvailabelProducts from "./AvailabelProducts";
+import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import Modal from "./Modal";
 import ProductContext from "./ProductContext";
 import "./Store.css";
 
+
+
 const Store=()=> {
-
-
-
-  const [isCartVisible, setIsCartVisible] = useState(false);
+const [isCartVisible, setIsCartVisible] = useState(false);
 const { musicProducts, merchProducts } = useContext(ProductContext);
+const navigate = useNavigate();
 
 const handleCartButtonClick = () => {
   setIsCartVisible(!isCartVisible);
 };
+
+const handleProductClick = (productId) => {
+  navigate(`/product/${productId}`);
+};
+
 
   return (
     <div>
@@ -24,9 +30,11 @@ const handleCartButtonClick = () => {
         {musicProducts.map((product, index) => (
           <AvailabelProducts
             key={index}
+            id={product.id}
             title={product.title}
             price={product.price}
             imageUrl={product.imageUrl}
+            onClick={() => handleProductClick(product.id)}
           />
         ))}
       </div>
@@ -35,9 +43,11 @@ const handleCartButtonClick = () => {
         {merchProducts.map((product, index) => (
           <AvailabelProducts
             key={index}
+            id={product.id}
             title={product.title}
             price={product.price}
             imageUrl={product.imageUrl}
+            onClick={() => handleProductClick(product.id)}
           />
         ))}
       </div>

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
+import ProductDetails from "./components/ProductDetails";
 
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -35,14 +36,17 @@ const App = () => {
       <UpperHeader onCartButtonClick={handleCartButtonClick} />
       <LowerHeader />
       <Routes>
-        <Route path="/" element={<Store />} />
+        <Route path="/"  element={<Store />} />
         <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home />} />
         <Route
           path="/contact"
           element={<Contact onSubmit={handleSubmitForm} />}
         />
+         <Route path="/product/:productId" element={<ProductDetails />} />
+      
       </Routes>
+     
       {isCartVisible && (
         <Modal onClose={handleCartButtonClick}>
           <CartItem onClose={handleCartButtonClick} />

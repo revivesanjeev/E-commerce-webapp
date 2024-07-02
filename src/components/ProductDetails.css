@@ -1,0 +1,71 @@
+.product-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%; /* Ensures full viewport height */
+}
+
+.card {
+  width: 80%; /* Adjust width as needed */
+  margin: auto; /* Center the card horizontally */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cardtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cardimg {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.cardbody {
+  padding: 20px 0;
+}
+
+.cardtext {
+  margin-bottom: 10px;
+}
+
+.cardtext-description {
+  line-height: 1.5;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.user-reviews {
+  margin-top: 20px;
+}
+
+.user-reviews h4 {
+  margin-bottom: 10px;
+}
+
+.review {
+  margin-bottom: 10px;
+}
+
+.payment-options {
+  margin-top: 20px;
+}
+
+.payment-options h4 {
+  margin-bottom: 10px;
+}
+
+.payment-options ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.payment-options li {
+  margin-bottom: 5px;
+}

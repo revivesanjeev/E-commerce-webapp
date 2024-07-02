@@ -4,24 +4,27 @@ import Card from "react-bootstrap/Card";
 import "./AvailabelProduct.css";
 import ProductContext from "./ProductContext";
 
-function AvailabelProduct({ title, price, imageUrl }) {
+function AvailabelProduct({ title, price, imageUrl ,id,onClick}) {
    const { addToCart } = useContext(ProductContext);
 
-   const handleAddToCart=()=>{
-    addToCart({title,price,imageUrl});
+   const handleAddToCart=(e)=>{
+    e.stopPropagation();
+    addToCart({title,price,imageUrl,id});
    };
 
   return (
-    <Card className="card">
-      <Card.Title className="cardtitle">{title}</Card.Title>
-      <Card.Img className="cardimg" variant="top" src={imageUrl} />
-      <Card.Body className="cardbody">
-        <Card.Text className="cardtext">{price}</Card.Text>
-        <Button variant="primary" onClick={handleAddToCart}>
-          Add To Cart
-        </Button>
-      </Card.Body>
-    </Card>
+    <div  onClick={onClick}>
+      <Card className="card">
+        <Card.Title className="cardtitle">{title}</Card.Title>
+        <Card.Img className="cardimg" variant="top" src={imageUrl} />
+        <Card.Body className="cardbody">
+          <Card.Text className="cardtext">{price}</Card.Text>
+          <Button variant="primary" onClick={handleAddToCart}>
+            Add To Cart
+          </Button>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
 

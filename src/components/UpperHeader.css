@@ -1,10 +1,12 @@
 Navbar {
      font-family:"Metal Mania";
+     position: static;
+     z-index: 5;
       
 }
 
 .customnav{
-  position:sticky;
+  position:scroll;
 }
 
 .cart-badge {

@@ -4,6 +4,7 @@
 width: 100%;
   background-color: rgb(143, 142, 146);
   height: 200px;
+  position: sticky;
 }
 
 p {
