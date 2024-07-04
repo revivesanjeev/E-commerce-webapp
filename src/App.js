@@ -61,9 +61,9 @@ const App = () => {
               path="/contact"
               element={<Contact onSubmit={handleSubmitForm} />}
             />
-            {authCtx.isLoggedIn && (
+            
               <Route path="/product/:productId" element={<ProductDetails />} />
-            )}
+           
          
           </Routes>
         </main>

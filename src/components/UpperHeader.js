@@ -6,11 +6,26 @@ import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import "./UpperHeader.css";
 import { useLocation, NavLink } from "react-router-dom";
+import AuthContext from "./AuthContext";
 
 function UpperHeader({ onCartButtonClick }) {
   const { cartProducts } = useContext(ProductContext);
   const cartItemCount = cartProducts.length;
   const location = useLocation();
+   const authCtx=useContext(AuthContext);
+
+
+
+  const handleAuthButtonClick = () => {
+    if (authCtx.isLoggedIn) {
+      authCtx.logout();
+    } else {
+      authCtx.login();
+    }
+  };
+
+
+
 
   return (
     <Navbar variant="dark" bg="dark" expand="lg" className="customnav">
@@ -40,8 +55,9 @@ function UpperHeader({ onCartButtonClick }) {
           as={NavLink}
           to="/auth"
           className={({ isActive }) => (isActive ? "active" : "")}
+          onClick={handleAuthButtonClick}
         >
-          Login
+          {authCtx.isLoggedIn ? "Logout" : "Login"}
         </Navbar.Brand>
         <Navbar.Brand
           as={NavLink}

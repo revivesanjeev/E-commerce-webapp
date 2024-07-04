@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ProductProvider } from "./components/ProductContext";
+import { AuthContextProvider } from './components/AuthContext';
 
 /* React Bootstrap Configuration*/
 
@@ -16,7 +17,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ProductProvider>
-      <App />
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
     </ProductProvider>
   </React.StrictMode>
 );

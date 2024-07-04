@@ -8,7 +8,7 @@ function Auth() {
   const passwordInputRef = useRef();
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate(); 
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
