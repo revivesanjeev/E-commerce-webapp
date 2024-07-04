@@ -1,12 +1,9 @@
-Navbar {
-     font-family:"Metal Mania";
-     position: static;
-     z-index: 5;
-      
-}
-
-.customnav{
-  position:scroll;
+.customnav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+   z-index: 1;/* Ensure it stays above other content */
 }
 
 .cart-badge {
@@ -14,10 +11,7 @@ Navbar {
   font-size: 0.8em;
 }
 
-/* Add this to your UpperHeader.css */
-
 .active {
-  
   font-weight: bold; /* Optional: makes the active link bold */
-  border-bottom: 3px solid rgb(0, 255, 200); 
+  border-bottom: 3px solid rgb(0, 255, 200);
 }

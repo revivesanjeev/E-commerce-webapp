@@ -10,7 +10,7 @@ const CartProduct = ({ title, price, imageUrl, quantity }) => {
         <Card.Title className="cardtitle">{title}</Card.Title>
         <Card.Img className="cardimg" variant="top" src={imageUrl} />
         <Card.Body className="cardbody">
-          <Card.Text className="cardtext">Price: ${price}</Card.Text>
+          <Card.Text className="cardtext">Price: {price}</Card.Text>
           <Card.Text className="cardtext">Quantity: {quantity}</Card.Text>
           <Button variant="danger">Remove</Button>
         </Card.Body>

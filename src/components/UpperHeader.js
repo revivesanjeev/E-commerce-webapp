@@ -5,14 +5,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import "./UpperHeader.css";
-import {useLocation, NavLink } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 
 function UpperHeader({ onCartButtonClick }) {
-
-   const { cartProducts } = useContext(ProductContext);
-
-     const cartItemCount = cartProducts.length;
-      const location= useLocation();
+  const { cartProducts } = useContext(ProductContext);
+  const cartItemCount = cartProducts.length;
+  const location = useLocation();
 
   return (
     <Navbar variant="dark" bg="dark" expand="lg" className="customnav">
@@ -31,7 +29,6 @@ function UpperHeader({ onCartButtonClick }) {
         >
           STORE
         </Navbar.Brand>
-
         <Navbar.Brand
           as={NavLink}
           to="/about"
@@ -39,7 +36,13 @@ function UpperHeader({ onCartButtonClick }) {
         >
           ABOUT
         </Navbar.Brand>
-
+        <Navbar.Brand
+          as={NavLink}
+          to="/auth"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Login
+        </Navbar.Brand>
         <Navbar.Brand
           as={NavLink}
           to="/contact"

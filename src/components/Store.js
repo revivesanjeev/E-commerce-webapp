@@ -25,7 +25,7 @@ const handleProductClick = (productId) => {
 
   return (
     <div>
-      <h3 className="product">MUSIC</h3>
+      <h3 className="product">Availabel Products</h3>
       <div className="cartitem">
         {musicProducts.map((product, index) => (
           <AvailabelProducts
@@ -38,7 +38,7 @@ const handleProductClick = (productId) => {
           />
         ))}
       </div>
-      <h3 className="product">MERCH</h3>
+      <h3 className="product">Premium Products</h3>
       <div className="cartitem">
         {merchProducts.map((product, index) => (
           <AvailabelProducts

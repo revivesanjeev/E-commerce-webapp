@@ -1,5 +1,10 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import UpperHeader from "./components/UpperHeader";
 import LowerHeader from "./components/LowerHeader";
 import Modal from "./components/Modal";
@@ -10,9 +15,13 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import ProductDetails from "./components/ProductDetails";
+import Auth from "./components/Auth/Auth";
+import AuthContext from "./components/AuthContext";
+import "./App.css";
 
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const authCtx = useContext(AuthContext);
 
   const handleCartButtonClick = () => {
     setIsCartVisible(!isCartVisible);
@@ -33,26 +42,34 @@ const App = () => {
 
   return (
     <Router>
-      <UpperHeader onCartButtonClick={handleCartButtonClick} />
-      <LowerHeader />
-      <Routes>
-        <Route path="/"  element={<Store />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/home" element={<Home />} />
-        <Route
-          path="/contact"
-          element={<Contact onSubmit={handleSubmitForm} />}
-        />
-         <Route path="/product/:productId" element={<ProductDetails />} />
-      
-      </Routes>
-     
-      {isCartVisible && (
-        <Modal onClose={handleCartButtonClick}>
-          <CartItem onClose={handleCartButtonClick} />
-        </Modal>
-      )}
-      <Footer />
+      <div className="app-wrapper">
+        <UpperHeader  className="customnav" onCartButtonClick={handleCartButtonClick} />
+        <LowerHeader />
+        <main className="main-content">
+          <Routes>
+            <Route
+              path="/auth"
+              element={!authCtx.isLoggedIn ? <Auth /> : <Navigate to="/" />}
+            />
+            <Route path="/" element={<Store />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/home" element={<Home />} />
+            <Route
+              path="/contact"
+              element={<Contact onSubmit={handleSubmitForm} />}
+            />
+            {authCtx.isLoggedIn && (
+              <Route path="/product/:productId" element={<ProductDetails />} />
+            )}
+          </Routes>
+        </main>
+        {isCartVisible && (
+          <Modal onClose={handleCartButtonClick}>
+            <CartItem onClose={handleCartButtonClick} />
+          </Modal>
+        )}
+        <Footer />
+      </div>
     </Router>
   );
 };

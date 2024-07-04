@@ -1,10 +1,45 @@
 import React, { createContext, useState } from "react";
-import turntableImage from "./img/Album 1.png";
-import smartwatchImage from "./img/Album 2.png";
-import laptopBagImage from "./img/Album 3.png";
-import chocolatesImage from "./img/Album 4.png";
-import headphonesImage from "./img/Shirt.png";
-import bluetoothSpeakerImage from "./img/Cofee.png";
+
+
+import chocolatesImage1 from "./img/chocolate image/CHOCOLATEIMAGE1.jpeg";
+import chocolatesImage2 from "./img/chocolate image/CHOCOLATEIMAGE2.jpeg";
+import chocolatesImage3 from "./img/chocolate image/CHOCOLATEIMAGE3.jpeg";
+import chocolatesImage4 from "./img/chocolate image/CHOCOLATEIMAGE4.jpeg";
+
+import headphones1 from "./img/Headphones/headPhones1.webp";
+import headphones2 from "./img/Headphones/headPhones2.webp";
+import headphones3 from "./img/Headphones/headPhones3.webp";
+import headphones4 from "./img/Headphones/headphonesimage4.webp";
+
+import Laptopbag from "./img/LaptopBag/LaptopBag.webp";
+import Laptopbag1 from "./img/LaptopBag/laptopBag2.webp";
+import Laptopbag2 from "./img/LaptopBag/laptopbag3.webp";
+import Laptopbag3 from "./img/LaptopBag/laptopBag4.webp";
+import Laptopbag4 from "./img/LaptopBag/laptopBag5.webp";
+
+
+import smartwatchImage1 from "./img/smartwatch/smartwatch1.webp";
+import smartwatchImage2 from "./img/smartwatch/smartwatch2.webp";
+import smartwatchImage3 from "./img/smartwatch/smartwatch3.webp";
+import smartwatchImage4 from "./img/smartwatch/smartwatch4.webp";
+
+
+import bluetoothSpeakerImage1 from "./img/bluetooth1/speaker1.webp";
+import bluetoothSpeakerImage2 from "./img/bluetooth1/speaker2.webp";
+import bluetoothSpeakerImage3 from "./img/bluetooth1/speaker3.webp";
+import bluetoothSpeakerImage4 from "./img/bluetooth1/speaker4.webp";
+import bluetoothSpeakerImage5 from "./img/bluetooth1/speaker5.webp";
+
+
+
+
+import turntable1 from "./img/Turntableimage/turntable image 1.jpeg";
+import turntable2 from "./img/Turntableimage/turntable image2.jpeg";
+import turntable3 from "./img/Turntableimage/turntable image3.jpeg";
+import turntable4 from "./img/Turntableimage/turntable image4.jpg";
+
+
+
 
 const ProductContext = createContext();
 
@@ -13,7 +48,8 @@ const initialProducts = [
     id: 1,
     title: "Classic Turntable with Speakers",
     price: "$249.99",
-    imageUrl: turntableImage,
+    imageUrl:turntable1,
+    images: [ turntable1, turntable2, turntable3, turntable4],
     description:
       "Experience high-fidelity audio with this classic turntable equipped with built-in speakers.",
     userReviews: [
@@ -35,7 +71,13 @@ const initialProducts = [
     id: 2,
     title: "Smartwatch Fitness Tracker",
     price: "$129.99",
-    imageUrl: smartwatchImage,
+    imageUrl:smartwatchImage1,
+    images: [
+      smartwatchImage1,
+      smartwatchImage2,
+      smartwatchImage3,
+      smartwatchImage4,
+    ],
     description:
       "Stay fit and connected with this smartwatch fitness tracker with GPS and heart rate monitor.",
     userReviews: [
@@ -53,7 +95,8 @@ const initialProducts = [
     id: 3,
     title: "Leather Laptop Bag",
     price: "$79.99",
-    imageUrl: laptopBagImage,
+    imageUrl: Laptopbag,
+    images: [Laptopbag, Laptopbag1, Laptopbag2, Laptopbag3, Laptopbag4],
     description:
       "Premium leather laptop bag with compartments for laptops, tablets, and accessories.",
     userReviews: [
@@ -75,7 +118,14 @@ const initialProducts = [
     id: 4,
     title: "Gourmet Chocolate Assortment",
     price: "$39.99",
-    imageUrl: chocolatesImage,
+    imageUrl: chocolatesImage1,
+    images: [
+      
+      chocolatesImage1,
+      chocolatesImage2,
+      chocolatesImage3,
+      chocolatesImage4,
+    ],
     description:
       "Indulge in a variety of gourmet chocolates handcrafted by master chocolatiers.",
     userReviews: [
@@ -97,7 +147,14 @@ const initialProducts = [
     id: 5,
     title: "Wireless Noise-Canceling Headphones",
     price: "$199.99",
-    imageUrl: headphonesImage,
+    imageUrl:headphones1,
+    images: [
+     
+      headphones1,
+      headphones2,
+      headphones3,
+      headphones4,
+    ],
     description:
       "Immerse yourself in music with these wireless headphones featuring active noise cancellation.",
     userReviews: [
@@ -119,7 +176,15 @@ const initialProducts = [
     id: 6,
     title: "Portable Bluetooth Speaker",
     price: "$59.99",
-    imageUrl: bluetoothSpeakerImage,
+    imageUrl:bluetoothSpeakerImage1,
+    images: [
+      
+      bluetoothSpeakerImage1,
+      bluetoothSpeakerImage2,
+      bluetoothSpeakerImage3,
+      bluetoothSpeakerImage4,
+      bluetoothSpeakerImage5,
+    ],
     description:
       "Take your music anywhere with this portable Bluetooth speaker with long battery life.",
     userReviews: [

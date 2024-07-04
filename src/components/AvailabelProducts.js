@@ -24,6 +24,7 @@ function AvailabelProduct({ title, price, imageUrl ,id,onClick}) {
           </Button>
         </Card.Body>
       </Card>
+      
     </div>
   );
 }
