@@ -43,7 +43,10 @@ const App = () => {
   return (
     <Router>
       <div className="app-wrapper">
-        <UpperHeader  className="customnav" onCartButtonClick={handleCartButtonClick} />
+        <UpperHeader
+          className="customnav"
+          onCartButtonClick={handleCartButtonClick}
+        />
         <LowerHeader />
         <main className="main-content">
           <Routes>
@@ -61,6 +64,7 @@ const App = () => {
             {authCtx.isLoggedIn && (
               <Route path="/product/:productId" element={<ProductDetails />} />
             )}
+         
           </Routes>
         </main>
         {isCartVisible && (

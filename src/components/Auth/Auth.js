@@ -35,7 +35,7 @@ function Auth() {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCJIkBrOnoaPwUY4jvNca22GzYW342Lftk";
     }
-    
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -54,6 +54,9 @@ function Auth() {
         } else {
           return res.json().then((data) => {
             let errorMessage = "Authentication failed";
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
             throw new Error(errorMessage);
           });
         }
