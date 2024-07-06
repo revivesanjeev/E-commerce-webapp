@@ -4,17 +4,48 @@ import Card from "react-bootstrap/Card";
 import "./AvailabelProduct.css";
 import ProductContext from "./ProductContext";
 import AuthContext from "./AuthContext";
+import axios from "axios";
+
 
 function AvailabelProduct({ title, price, imageUrl ,id,onClick}) {
-   const { addToCart } = useContext(ProductContext);
+   const { addToCart, cartProducts } = useContext(ProductContext);
    const authCtx =useContext(AuthContext);
 
 
 
-   const handleAddToCart=(e)=>{
+   
+  const handleAddToCart = (e) => {
     e.stopPropagation();
-    addToCart({title,price,imageUrl,id});
-   };
+
+    addToCart({ title, price, imageUrl, id });
+
+    const cartProduct = cartProducts.find((product) => product.id === id) || {
+      quantity: 1,
+    };
+
+    const userCartDetails = {
+      email: authCtx.email,
+      productTitle: title,
+      cartQuantity: cartProduct.quantity,
+    };
+
+    axios
+      .post(
+        "https://crudcrud.com/api/1f2c3e7a5a78490db6c5f7e2e0ffa1cc",
+        userCartDetails,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log("Data posted successfully", response.data);
+      })
+      .catch((error) => {
+        console.error("Error posting data", error);
+      });
+  };
 
 
    const handleButtonClick = (e) => {

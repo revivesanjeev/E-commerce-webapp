@@ -24,7 +24,9 @@ function UpperHeader({ onCartButtonClick }) {
     }
   };
 
-
+ const showCartButton =
+   location.pathname === "/" ||
+   (location.pathname.startsWith("/product/") && location.pathname.length > 9);
 
 
   return (
@@ -51,6 +53,23 @@ function UpperHeader({ onCartButtonClick }) {
         >
           ABOUT
         </Navbar.Brand>
+
+        <Navbar.Brand
+          as={NavLink}
+          to="/contact"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Contact US
+        </Navbar.Brand>
+        {showCartButton && (
+          <Button variant="outline-info" onClick={onCartButtonClick}>
+            Cart
+            <Badge pill bg="danger" className="cart-badge">
+              {cartItemCount}
+            </Badge>
+          </Button>
+        )}
+
         <Navbar.Brand
           as={NavLink}
           to="/auth"
@@ -59,21 +78,6 @@ function UpperHeader({ onCartButtonClick }) {
         >
           {authCtx.isLoggedIn ? "Logout" : "Login"}
         </Navbar.Brand>
-        <Navbar.Brand
-          as={NavLink}
-          to="/contact"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          Contact US
-        </Navbar.Brand>
-        {location.pathname === "/" && (
-          <Button variant="outline-info" onClick={onCartButtonClick}>
-            Cart
-            <Badge pill bg="danger" className="cart-badge">
-              {cartItemCount}
-            </Badge>
-          </Button>
-        )}
         <Navbar.Toggle aria-controls="navbar-dark-example" />
       </Container>
     </Navbar>

@@ -7,7 +7,7 @@ function Auth() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const authCtx = useContext(AuthContext);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,8 +24,8 @@ function Auth() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const enteredEmail = event.target.email.value;
-    const enteredPassword = event.target.password.value;
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
     setIsLoading(true);
     let url;
     if (isLogin) {
@@ -62,7 +62,7 @@ function Auth() {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
+        authCtx.login(data.idToken, enteredEmail); // Pass the email
         navigate("/"); // Redirect to home after login
       })
       .catch((err) => {
